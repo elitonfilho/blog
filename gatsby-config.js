@@ -5,6 +5,11 @@ module.exports = {
       name: `Eliton`,
       summary: `A guy.`,
     },
+    social: {
+      github: `elitonfilho`,
+      twitter: `jelitonaf`,
+      linkedin: `elitonalbuquerque`
+    },
     description: `Trying to write useful and not boring stuff`,
   },
   plugins: [
@@ -12,10 +17,27 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        plugins: [],
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1000,
+              sizeByPixelDensity: true,
+            },
+          }
+        ],
       },
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: `${__dirname}/src/images`
+        }
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
