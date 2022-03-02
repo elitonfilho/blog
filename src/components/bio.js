@@ -4,6 +4,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import GitIcon from "../../src/images/gh.svg"
 import LinkedinIcon from "../../src/images/linkedin.svg"
 import TwitterIcon from "../../src/images/twitter.svg"
+import CurriculumIcon from "../../src/images/curriculum.svg"
 
 const Bio = () => {
     const data = useStaticQuery(graphql`
@@ -21,6 +22,11 @@ const Bio = () => {
                     }
                 }
             }
+            file(name: {eq: "resume"}) {
+                id
+                publicURL
+                dir
+              }
         }`
     )
 
@@ -50,6 +56,7 @@ const Bio = () => {
                     <a href={`https://github.com/${social?.github || ''}`} target="_blank" rel="noreferrer"><GitIcon/>{}</a>
                     <a href={`https://linkedin.com/in/${social?.linkedin || ''}`} target="_blank" rel="noreferrer"><LinkedinIcon/>{}</a>
                     <a href={`https://twitter.com/${social?.twitter || ''}`} target="_blank" rel="noreferrer"><TwitterIcon/>{}</a>
+                    <a href={data.file.publicURL} download><CurriculumIcon/>{}</a>
                 </div>
             </div>
 
