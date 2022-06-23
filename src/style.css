@@ -324,6 +324,26 @@
     margin-right: var(--spacing-1);
   }
 
+  .contact {
+    text-align: center;
+  }
+
+  .contact li {
+    width: var(--spacing-16);
+    list-style-type: none;
+    font-size: var(--spacing-3);
+  }
+
+  .contact ol {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .contact a {
+    text-decoration: none;
+    color: inherit;
+  }
+
   .blog-post header h1 {
     margin: var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0);
   }

@@ -3,16 +3,17 @@ module.exports = {
     title: `Eliton's Blog!`,
     author: {
       name: `Eliton`,
-      summary: `A guy.`,
+      summary: `I am a Cartographic Enginner / Software Dev trying to build and share
+       some knowledge by writing articles!
+      Interested in GIS tecnologies, ML/DL applications (especially on remote sensing data)
+      and cool stuff about lower (C++/Rust) and higher (Python/JS) level languages!`
     },
     social: {
       github: `elitonfilho`,
       twitter: `jelitonaf`,
-      linkedin: `elitonalbuquerque`
+      linkedin: `elitonalbuquerque`,
+      mail: `jealbf@gmail.com`
     },
-    description: `Wannabe dev learning by writing (useful) articles!
-    Interested in GIS tecnologies, ML/DL applications (especially on remote sensing data)
-    and cool stuff about lower (C++/Rust) and higher (Python/JS) level languages!`,
     menuLinks: [
       {
         name: `blog`,
