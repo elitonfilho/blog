@@ -13,26 +13,7 @@ module.exports = {
       twitter: `jelitonaf`,
       linkedin: `elitonalbuquerque`,
       mail: `jealbf@gmail.com`
-    },
-    menuLinks: [
-      {
-        name: `blog`,
-        link: `/`
-      },
-      {
-        name: `projects`,
-        link: `/projects`
-      },
-      {
-        name: `cv`, 
-        link: `/cv`
-      },
-      {
-        name: `contact`, 
-        link: `/contact`
-      },
-
-    ]
+    }
   },
   plugins: [
     `gatsby-plugin-image`,  

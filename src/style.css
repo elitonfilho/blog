@@ -306,22 +306,14 @@
   
   .bio p {
     margin-bottom: var(--spacing-0);
+    text-align: justify;
   }
   
   .bio-avatar {
     margin-right: var(--spacing-4);
     margin-bottom: var(--spacing-0);
-    min-width: 50px;
+    min-width: 100px;
     border-radius: 100%;
-  }
-  
-  .bio-social {
-    display: flex;
-  }
-
-  .bio-social a {
-    width: var(--spacing-8);
-    margin-right: var(--spacing-1);
   }
 
   .contact {

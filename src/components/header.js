@@ -8,17 +8,18 @@ const HeaderComponent = () => {
     site {
       siteMetadata {
         title
-        menuLinks {
-          name
-          link
         }
       }
+    file(name: {eq: "resume"}) {
+      id
+      publicURL
+      dir
     }
   }`
   )
 
   const title = queryData.site.siteMetadata?.title
-  const menuLinks = queryData.site.siteMetadata?.menuLinks
+  const fileURL = queryData.file?.publicURL
 
   return (
       <nav>
@@ -28,13 +29,21 @@ const HeaderComponent = () => {
               {title}
             </Link>
           </h1>
-          {menuLinks.map((link) => (
-            <li key={link.name}>
-              <h6>
-                <Link to={link.link}>{link.name}</Link>
-              </h6>
-            </li>
-          ))}
+          <li key={`projects`}>
+            <h6>
+              <Link to="/projects">projects</Link>
+            </h6>
+          </li>
+          <li key={`cv`}>
+            <h6>
+              <a href={fileURL} download>cv</a>
+            </h6>
+          </li>
+          <li key={`contact`}>
+            <h6>
+              <Link to="/contact">contact</Link>
+            </h6>
+          </li>
         </ul>
       </nav>
   )
