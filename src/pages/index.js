@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
+import Header from "../components/header"
 import Seo from "../components/seo"
 
 const BlogIndex = ({ data, location }) => {
@@ -24,7 +25,7 @@ const BlogIndex = ({ data, location }) => {
     }
 
     return (
-        <Layout location={location} title={siteTitle}>
+        <Layout location={location}>
             <Seo title="All posts" />
             <Bio />
             <ol style={{ listStyle: `none` }}>

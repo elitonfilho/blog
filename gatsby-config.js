@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Eliton's Blog`,
+    title: `Eliton's Blog!`,
     author: {
       name: `Eliton`,
       summary: `A guy.`,
@@ -10,10 +10,31 @@ module.exports = {
       twitter: `jelitonaf`,
       linkedin: `elitonalbuquerque`
     },
-    description: `Trying to write useful and not boring stuff`,
+    description: `Wannabe dev learning by writing (useful) articles!
+    Interested in GIS tecnologies, ML/DL applications (especially on remote sensing data)
+    and cool stuff about lower (C++/Rust) and higher (Python/JS) level languages!`,
+    menuLinks: [
+      {
+        name: `blog`,
+        link: `/`
+      },
+      {
+        name: `projects`,
+        link: `/projects`
+      },
+      {
+        name: `cv`, 
+        link: `/cv`
+      },
+      {
+        name: `contact`, 
+        link: `/contact`
+      },
+
+    ]
   },
   plugins: [
-    `gatsby-plugin-image`,
+    `gatsby-plugin-image`,  
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     {
