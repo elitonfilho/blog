@@ -13,6 +13,42 @@ module.exports = {
       twitter: `jelitonaf`,
       linkedin: `elitonalbuquerque`,
       mail: `jealbf@gmail.com`
+    },
+    projects: {
+      personal:[
+        {
+          name: `SegSR`,
+          link: `https://github.com/elitonfilho/segsr`,
+          description: `Deep learning method to generate semantically-aware super resolved imagery`
+        },
+        {
+          name: `This blog!`,
+          link: `https://github.com/elitonfilho/blog`,
+          description: `Static website using a modified gatsby blog template`
+        },
+        {
+          name: `Secret Message`,
+          link: `https://github.com/poa-tech-beer/experiment-1`,
+          description: `Serverless message application built with friends during pizza nights!`
+        },
+      ],
+      work: [
+        {
+          name: `Edition Plugin`,
+          link: `https://github.com/dsgoficial/ferramentas_edicao`,
+          description: `QGIS Plugin that generates and exports maps by using a simple configuration file`
+        },
+        {
+          name: `DSGTools`,
+          link: `https://github.com/dsgoficial/DsgTools`,
+          description: `QGIS Plugin that creates and manipulates geospatial data`
+        },
+        {
+          name: `Experimental Tools`,
+          link: `https://github.com/1cgeo/ferramentas_experimentais`,
+          description: `QGIS Plugin holding multiple validation routines for spatial data`
+        },
+      ]
     }
   },
   plugins: [

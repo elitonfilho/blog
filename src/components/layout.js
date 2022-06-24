@@ -1,6 +1,5 @@
 import * as React from "react"
 import HeaderComponent from "./header"
-import { useStaticQuery, graphql } from "gatsby"
 
 const Layout = ({ location, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
