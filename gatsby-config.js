@@ -41,7 +41,7 @@ module.exports = {
         {
           name: `DSGTools`,
           link: `https://github.com/dsgoficial/DsgTools`,
-          description: `QGIS Plugin that creates and manipulates geospatial data`
+          description: `QGIS Plugin that creates and manipulates spatial data`
         },
         {
           name: `Experimental Tools`,
