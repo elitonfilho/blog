@@ -3,8 +3,8 @@ import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
-import Header from "../components/header"
 import Seo from "../components/seo"
+import TagsBlogPost from "../components/tags"
 
 const BlogIndex = ({ data, location }) => {
     const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -40,11 +40,12 @@ const BlogIndex = ({ data, location }) => {
                                 itemType="http://schema.org/Article"
                             >
                                 <header>
-                                    <h2>
+                                    <h2 style={{"margin-bottom":0}}>
                                         <Link to={post.fields.slug} itemProp="url">
                                             <span itemProp="headline">{title}</span>
                                         </Link>
                                     </h2>
+                                    <TagsBlogPost inArticle="false" tags={post.frontmatter.tags}></TagsBlogPost>
                                     <small>{post.frontmatter.date}</small>
                                 </header>
                                 <section>
@@ -83,6 +84,7 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          tags
         }
       }
     }

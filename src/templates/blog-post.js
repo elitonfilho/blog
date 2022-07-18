@@ -25,7 +25,7 @@ const BlogPostTemplate = ({ data, location }) => {
             >
                 <header>
                     <h1 itemProp="headline">{post.frontmatter.title}</h1>
-                    <TagsBlogPost inArticle tags={post.frontmatter.tags}></TagsBlogPost>
+                    <TagsBlogPost inArticle="true" tags={post.frontmatter.tags}></TagsBlogPost>
                     <p>{post.frontmatter.date}</p>
                 </header>
                 <MDXRenderer>{post.body}</MDXRenderer>
