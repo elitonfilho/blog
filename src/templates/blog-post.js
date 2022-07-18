@@ -5,6 +5,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import TagsBlogPost from "../components/tags"
 
 const BlogPostTemplate = ({ data, location }) => {
     const post = data.mdx
@@ -24,6 +25,7 @@ const BlogPostTemplate = ({ data, location }) => {
             >
                 <header>
                     <h1 itemProp="headline">{post.frontmatter.title}</h1>
+                    <TagsBlogPost inArticle tags={post.frontmatter.tags}></TagsBlogPost>
                     <p>{post.frontmatter.date}</p>
                 </header>
                 <MDXRenderer>{post.body}</MDXRenderer>
@@ -83,6 +85,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        tags
       }
     }
     previous: mdx(id: { eq: $previousPostId }) {
