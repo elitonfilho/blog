@@ -1,21 +1,16 @@
-import React from "react"
-import PropTypes from "prop-types"
+import * as React from "react"
+import Layout from "../components/layout"
+import Seo from "../components/seo"
 
-// Components
-import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
 
-const TagsPage = ({
-  data: {
-    allMdx: { group },
-    site: {
-      siteMetadata: { title },
-    },
-  },
-}) => (
-  <div>
-    <Helmet title={title} />
-    <div>
+const TagsPage = ({ data, location }) => {
+  const { group } = data.allMdx
+  const { title } = data.site.siteMetadata
+
+  return (
+    <Layout location={location}>
+      <Seo title={title} />
       <h1>Tags</h1>
       <ul>
         {group.map(tag => (
@@ -26,26 +21,8 @@ const TagsPage = ({
           </li>
         ))}
       </ul>
-    </div>
-  </div>
-)
-
-TagsPage.propTypes = {
-  data: PropTypes.shape({
-    allMdx: PropTypes.shape({
-      group: PropTypes.arrayOf(
-        PropTypes.shape({
-          fieldValue: PropTypes.string.isRequired,
-          totalCount: PropTypes.number.isRequired,
-        }).isRequired
-      ),
-    }),
-    site: PropTypes.shape({
-      siteMetadata: PropTypes.shape({
-        title: PropTypes.string.isRequired,
-      }),
-    }),
-  }),
+    </Layout>
+  )
 }
 
 export default TagsPage
@@ -57,7 +34,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMdx(limit: 2000) {
+    allMdx(limit: 1000) {
       group(field: frontmatter___tags) {
         fieldValue
         totalCount
