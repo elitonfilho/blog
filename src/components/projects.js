@@ -32,7 +32,7 @@ const ProjectComponent = () => {
         personalProjects.map(element => {
           return (
             <li key={element.name}>
-              <a href={element.link} style={{ color: `var(--color-text)` }}>
+              <a href={element.link}>
                 <strong>
                   {element.name}
                 </strong>
@@ -45,7 +45,7 @@ const ProjectComponent = () => {
         workProjects.map(element => {
           return (
             <li key={element.name} >
-              <a href={element.link} style={{ color: `var(--color-text)` }}>
+              <a href={element.link}>
                 <strong>
                   {element.name}
                 </strong>

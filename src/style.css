@@ -230,7 +230,7 @@
   /* Link */
   
   a {
-    color: var(--color-primary);
+    color: var(--color-text);
   }
   
   a:hover,
@@ -283,7 +283,7 @@
   
   .post-list-item h2 {
     font-size: var(--fontSize-4);
-    color: var(--color-primary);
+    color: var(--color-text);
     margin-bottom: var(--spacing-2);
     margin-top: var(--spacing-0);
   }
@@ -373,11 +373,8 @@
 
   }
 
-  .tags-title * {
-    margin-right: var(--spacing-1);
-    text-decoration: none;
-    color: black;
-    font-size: var(--fontSize-0);
+  .tags-list {
+    list-style-type: none;
   }
   
   .gatsby-highlight {
