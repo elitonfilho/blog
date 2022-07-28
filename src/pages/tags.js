@@ -12,7 +12,7 @@ const TagsPage = ({ data, location }) => {
     <Layout location={location}>
       <Seo title={title} />
       <h1>Tags</h1>
-      <ul>
+      <ul className="tags-list">
         {group.map(tag => (
           <li key={tag.fieldValue}>
             <Link to={`/tags/${tag.fieldValue}/`}>

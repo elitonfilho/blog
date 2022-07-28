@@ -12,18 +12,20 @@ const Tags = ({ data, location, pageContext }) => {
   return (
     <Layout location={location}>
       <h1>{tagHeader}</h1>
-      <ul>
+      <ul className="tags-list">
         {edges.map(({ node }) => {
           const { slug } = node.fields
           const { title } = node.frontmatter
           return (
-            <li key={slug} style={{ listStyle: `none` }}>
+            <li key={slug}>
               <Link to={slug}>{title}</Link>
             </li>
           )
         })}
+        <li key={`/tags`}>
+          <Link to={`/tags`}>All tags</Link>
+        </li>
       </ul>
-      <Link to="/tags">All tags</Link>
     </Layout>
   )
 }
