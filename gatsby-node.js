@@ -122,6 +122,11 @@ exports.createSchemaCustomization = ({ actions }) => {
       fields: Fields
     }
 
+    type Mdx implements Node {
+      frontmatter: Frontmatter
+      fields: Fields
+    }
+
     type Frontmatter {
       title: String
       description: String
