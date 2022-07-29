@@ -3,9 +3,7 @@ module.exports = {
     title: `Eliton's Blog!`,
     author: {
       name: `Eliton`,
-      summary: `I am a Cartographic Enginner / Software Dev trying to build and share
-       some knowledge by writing articles!
-      Interested in GIS tecnologies, ML/DL applications (especially on remote sensing data)
+      summary: `I am a Cartographic Enginner / SDE interested in GIS tecnologies, ML/DL applications (especially on remote sensing data)
       and cool stuff about lower (C++/Rust) and higher (Python/JS) level languages!`
     },
     social: {

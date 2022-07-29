@@ -256,6 +256,7 @@
 
   .header-nav {
     display: flex;
+    justify-content: space-around;
   }
 
   .header-nav > li {
@@ -302,6 +303,7 @@
   .bio {
     display: flex;
     margin-bottom: var(--spacing-16);
+    align-items: center;
   }
   
   .bio p {
@@ -311,9 +313,6 @@
   
   .bio-avatar {
     margin-right: var(--spacing-4);
-    margin-bottom: var(--spacing-0);
-    min-width: 100px;
-    border-radius: 100%;
   }
 
   .contact {
