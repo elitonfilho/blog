@@ -23,7 +23,7 @@ const Bio = () => {
             <StaticImage
                 className="bio-avatar"
                 formats={["auto", "webp", "avif"]}
-                src="../images/profile-pic.jpeg"
+                src="../static/profile-pic.jpeg"
                 alt="Profile picture"
                 constrained
             />

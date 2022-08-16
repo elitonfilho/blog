@@ -1,4 +1,5 @@
 import * as React from "react"
+import ThemeSelector from "./themeSelector"
 import { Link, graphql, useStaticQuery } from "gatsby"
 
 const HeaderComponent = () => {
@@ -43,6 +44,9 @@ const HeaderComponent = () => {
             <h6>
               <Link to="/contact">contact</Link>
             </h6>
+          </li>
+          <li>
+            <ThemeSelector/>
           </li>
         </ul>
       </nav>

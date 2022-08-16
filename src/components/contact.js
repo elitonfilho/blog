@@ -1,9 +1,9 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import GitIcon from "../../src/images/gh.svg"
-import LinkedinIcon from "../../src/images/linkedin.svg"
-import TwitterIcon from "../../src/images/twitter.svg"
-import MailIcon from "../../src/images/mail.svg"
+import GitIcon from "../../src/static/gh.svg"
+import LinkedinIcon from "../../src/static/linkedin.svg"
+import TwitterIcon from "../../src/static/twitter.svg"
+import MailIcon from "../../src/static/mail.svg"
 
 const ContactComponent = () => {
 
