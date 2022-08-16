@@ -1,6 +1,8 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 
+import { defineCustomElements } from "@deckdeckgo/highlight-code/dist/loader"
+
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -9,6 +11,8 @@ import TagsBlogPost from "../components/tags"
 const BlogIndex = ({ data, location }) => {
     const siteTitle = data.site.siteMetadata?.title || `Title`
     const posts = data.allMdx.nodes
+
+    defineCustomElements()
 
     if (posts.length === 0) {
         return (

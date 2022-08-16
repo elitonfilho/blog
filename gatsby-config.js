@@ -13,7 +13,7 @@ module.exports = {
       mail: `jealbf@gmail.com`
     },
     projects: {
-      personal:[
+      personal: [
         {
           name: `SegSR`,
           link: `https://github.com/elitonfilho/segsr`,
@@ -50,9 +50,10 @@ module.exports = {
     }
   },
   plugins: [
-    `gatsby-plugin-image`,  
+    `gatsby-plugin-image`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-dark-mode`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -63,7 +64,10 @@ module.exports = {
             options: {
               maxWidth: 1000,
               sizeByPixelDensity: true,
-            },
+            }
+          },
+          {
+            resolve: `gatsby-remark-highlight-code`
           }
         ],
       },
