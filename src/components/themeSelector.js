@@ -8,7 +8,9 @@ const ThemeSelector = () => (
         {({theme, toggleTheme}) => (
         <Toggle
         defaultChecked={theme === 'dark'}
-        onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}/>
+        onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
+        className='theme-toggle'
+        icons={false}/>
         )}
     </ThemeToggler>
 )
