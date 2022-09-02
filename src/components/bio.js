@@ -25,7 +25,7 @@ const Bio = () => {
                 formats={["auto", "webp", "avif"]}
                 src="../static/profile-pic.jpeg"
                 alt="Profile picture"
-                constrained
+                constrained="true"
             />
             <div>
                 {author?.name && (

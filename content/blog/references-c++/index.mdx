@@ -9,7 +9,7 @@ tags: ["c++"]
 You may already have heard about the term "pointer", specially if you have some background in the C programming language.
 Pointer indicates a variable that stores a memory address. In other words, it "points" to the adress of an object. Here is a simple usage example in C++:
 
-```c++
+```cpp
 int a = 4;
 int* pa = &a; // Address-of operator (&)
 std::cout << pa << '\n'; // Prints a memory address. Example: 0x2f14803204482c91
@@ -23,7 +23,7 @@ In C++, references behave simmilarly to pointers. A reference is an true alias t
 The compiler will optimize expressions with references, avoiding (most of the times) the copy overhead of assets and using the data referred by the alias.
 Some say that "references are like const-pointers that have already been dereferenced". Major differences between pointers and references are:
 
-```c++
+```cpp
 // A reference must be initialized when declared
 int* pa; // Initialized to random address
 // int& ra; // Compile error, references must be initialized
@@ -40,18 +40,19 @@ int& rc = c;
 // rc = d; // Compile error, references can't be reassigned
 ```
 
-References are safer (hinders the random memory acess of unintialized pointers) and easier to use (no need to use the dereference operator neither the pointer member acess operator (->)), but they are not a full replacement for pointers.
+References are safer (hinders the random memory acess of unintialized pointers) and easier to use (no need to use the dereference operator neither the pointer member acess operator (`->`)), but they are not a full replacement for pointers.
 According to the [C++ FAQ](https://isocpp.org/wiki/faq/references#refs-vs-ptrs), "Use references when you can, and pointers when you have to"!
 
 ### References as function parameters
 References also bring a major update on how to acess and modify variables, specially outside of its declaration scope.
 They are important in any application performance because it provides an alternative to copy parameters in function calls.
 Passing arguments to a function is normally done by the pass-by-value mechanims: the function receives a copy the argument, which prevents the modification of the original value.
+
 Modifying the original values would require a variable reassignment from the function return's value, or acessing the variable directly through pointers, which are specially effective because they are very cheap to copy and they usually allow 
 the direct manipulation of the memory they point to (exception: pointers to const).
 With the pass-by-reference method, arguments corresponding to reference parameters are not copied: such arguments are an alias for the original parameters passed to the function. 
 
-```c++
+```cpp
 // Function with string
 void tryToModifyString(std::string str) { str = "AnotherString"; };
 // Function with string*
@@ -79,7 +80,7 @@ The program's performance is usually not affected by copping light data types du
 may hurt the efficiency of C/C++ applications. According to the C++ Core Guidelines, small objects of "up to two or three words" are fine to be passed by value (i.e. copied), but larger 
 structures are expensive to copy. Therefore, potentially expensive copies at function parameters should be avoided by using references.
 
-```c++
+```cpp
 // Example from the C++ Core Guidelines
 void f1(const std::string& s);  // OK: pass by reference to const; always cheap
 void f2(std::string s);         // bad: potentially expensive
@@ -96,7 +97,7 @@ about the object's mutation capabilities, specially outside its original scope. 
 Now that we have some notions of references, we can dig a bit more! In special, i would like to talk about _references behavior on implicit conversions_.
 Numeric type conversion can be achived implicitly (by the compiler) or explicitly (by the programmer). Basic numeric type conversions (such as float -> int) are supported by most compilers, but conversion between complex data types should be defined by the developer.
 
-```c++
+```cpp
 int integerValue = 1;
 double doubleValue = 2;
 // C-style casting
@@ -112,11 +113,11 @@ In the last example, you could imagine that the conversion is done in two phases
 > Implicit conversions generate a _temporary value_ which can not be bound to non-const references.
 
 That would mean that the expression `float& doubleFromIntImplicit = integerValue` is not valid.
-The full explanation requires some knowledge of value categories (https://en.cppreference.com/w/cpp/language/value_category), which i'll write about in the future, but in simple terms, 
+The full explanation requires some knowledge of [value categories](https://en.cppreference.com/w/cpp/language/value_category), which i'll write about in the future, but in simple terms, 
 C++ does not allow temporary values to be passed to non-const references because it would allow the modification of a object that will be soon destroyed.
 The following code explains this effect:
 
-```c++
+```cpp
 void modifyValue(double& value) { value++; };
 void printValue(const double& value) { std::cout << value << '\n'; };
 int main() {
@@ -132,7 +133,7 @@ int main() {
 Tip: Use the VSCode C++ extension to capture these errors. The last example produced the following flag: 'a reference of type "double &" (not const-qualified) cannot be initialized with a value of type "int"'
 
 
-### Summary:
+### Summary
 - References creates an alias for a variable. It behaves similarly to pointers, but offers a simpler and safer usage
 - Use references on function definitions to avoid parameter copying
 - The const modifier is necessary when using references on implicit conversions

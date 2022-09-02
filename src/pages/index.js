@@ -40,11 +40,10 @@ const BlogIndex = ({ data, location }) => {
                         <li key={post.fields.slug}>
                             <article
                                 className="post-list-item"
-                                itemScope
                                 itemType="http://schema.org/Article"
                             >
                                 <header>
-                                    <h2 style={{"margin-bottom":0}}>
+                                    <h2 style={{"marginBottom":0}}>
                                         <Link to={post.fields.slug} itemProp="url">
                                             <span itemProp="headline">{title}</span>
                                         </Link>

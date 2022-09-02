@@ -61,7 +61,7 @@
     --color-heading-black: black;
     --color-accent: #d1dce5;
     --deckgo-highlight-code-font-size: var(--fontSize-0);
-    --deckgo-highlight-code-carbon-margin: var(--spacing-8);
+    --deckgo-highlight-code-carbon-margin: var(--spacing-8) 0;
   }
   
   /* HTML elements */
@@ -85,7 +85,8 @@
     color: var(--color-text);
   }
 
-  body.dark {
+  body.dark,
+  body.dark a {
     background-color: #333;
     color: white
   }
@@ -148,11 +149,7 @@
     font-size: var(--fontSize-1);
   }
   
-  h1 > a {
-    color: inherit;
-    text-decoration: none;
-  }
-  
+  h1 > a,
   h2 > a,
   h3 > a,
   h4 > a,
@@ -353,13 +350,13 @@
     margin: var(--spacing-0);
   }
 
-  .tags-article[inArticle=true] {
+  .tags-article[inarticle=true] {
     display: flex;
     margin-bottom: 0;
     margin-top: 0;
   }
 
-  .tags-article[inArticle="true"] > a {
+  .tags-article[inarticle="true"] > a {
     margin-right: var(--spacing-2);
     font-weight: bold;
     color: inherit;
@@ -369,7 +366,7 @@
     list-style-type: none;
   }
   
-  .tags-article[inArticle="false"] > a{
+  .tags-article[inarticle="false"] > a{
     margin-right: var(--spacing-1);
     font-size: var(--fontSize-0);
     text-decoration: none;
